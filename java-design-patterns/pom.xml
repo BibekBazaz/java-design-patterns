@@ -10,6 +10,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>builder-pattern-sample</module>
+      <module>singleton-pattern-example</module>
   </modules>
 
   <name>java-design-patterns</name>
