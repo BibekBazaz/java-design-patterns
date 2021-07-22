@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Relative extends Person{
 
-    private String relation;
+    private String relation = new String();
 
     public Relative(String relation) {
         this.relation = relation;

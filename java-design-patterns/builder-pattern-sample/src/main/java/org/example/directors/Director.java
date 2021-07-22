@@ -1,26 +1,35 @@
 package org.example.directors;
 
-import org.example.builder.CandidateBuilder;
+import org.example.builder.Builder;
+import org.example.builder.ElectionCandidateBuilder;
 import org.example.components.Contact;
 import org.example.components.Person;
-import org.example.model.Candidate;
-import sun.util.resources.LocaleData;
+import org.example.model.ElectionCandidate;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
 public class Director {
 
-    public Candidate createCandidate(){
-        CandidateBuilder candidateBuilder = new CandidateBuilder();
-        candidateBuilder.setRequestId(UUID.randomUUID().toString());
+    public void createElectionCandidate(Builder builder){
+        builder.setRequestId(UUID.randomUUID().toString());
         Person person = new Person();
         person.setName("Bibek");
         person.setDateOfBirth(LocalDate.now());
         Contact contact = new Contact();
         contact.setEmailAddress("bibekkumar.bazaz.com");
         person.setContact(contact);
-        candidateBuilder.setPersonInfo(person);
-        return candidateBuilder.create();
+        builder.setPersonInfo(person);
+    }
+
+    public void createSchoolCandidate(Builder builder){
+        builder.setRequestId(UUID.randomUUID().toString());
+        Person person = new Person();
+        person.setName("Bibek");
+        person.setDateOfBirth(LocalDate.now());
+        Contact contact = new Contact();
+        contact.setEmailAddress("bibekkumar.bazaz.com");
+        person.setContact(contact);
+        builder.setPersonInfo(person);
     }
 }

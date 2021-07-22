@@ -5,16 +5,19 @@ import org.example.components.Relative;
 
 import java.util.ArrayList;
 
-public class Candidate {
+public class ElectionCandidate {
 
     private String requestId;
     private Person personInfo;
     private ArrayList<Relative> relatives = new ArrayList<>();
+    //additional parameter
+    private String electionCampaignState;
 
-    public Candidate(String requestId, Person personInfo, ArrayList<Relative> relatives) {
+    public ElectionCandidate(String requestId, Person personInfo, ArrayList<Relative> relatives, String electionCampaignState) {
         this.requestId = requestId;
         this.personInfo = personInfo;
         this.relatives = relatives;
+        this.electionCampaignState = electionCampaignState;
     }
 
     public String getRequestId() {
@@ -29,12 +32,18 @@ public class Candidate {
         return relatives;
     }
 
+    public String getElectionCampaignState() {
+        return electionCampaignState;
+    }
+
+
     @Override
     public String toString() {
-        return "Candidate{" +
+        return "ElectionCandidate{" +
                 "requestId='" + requestId + '\'' +
                 ", personInfo=" + personInfo +
-                ", relatives=" + relatives +
+                ", relatives=" + relatives.toString() +
+                ", electionCampaignState='" + electionCampaignState + '\'' +
                 '}';
     }
 }
